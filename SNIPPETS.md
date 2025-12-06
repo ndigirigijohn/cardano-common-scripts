@@ -20,20 +20,24 @@ All 30 snippets available in **cardano-common-snippets**, each with both Lucid a
 ### 1. Generate Wallet
 **Create a new Cardano wallet with mnemonic phrase**
 
-**Lucid:**
+**JavaScript:**
 ```bash
-./snippets/wallet/generate.js --network preprod --output wallet.json
+./snippets/wallet/generate.js --network preprod --output outputs/wallet/wallet.json
 ```
 
 **cardano-cli:**
 ```bash
-./snippets/wallet/generate.sh --network preprod --output ./wallet-keys
+./snippets/wallet/generate.sh --network preprod --output ./outputs/wallet
 ```
 
 **What it does:**
 - Generates new cryptographic keys
 - Creates payment and stake addresses
 - Returns mnemonic phrase (Lucid) or key files (cardano-cli)
+
+**Notes:**
+- Defaults to the network defined in `.env` (`DEFAULT_NETWORK`).
+- Writes artifacts under `outputs/wallet/` by default (gitignored).
 
 **Use when:** Starting fresh, need new test wallet, creating user wallets
 
@@ -42,7 +46,7 @@ All 30 snippets available in **cardano-common-snippets**, each with both Lucid a
 ### 2. Restore Wallet
 **Restore wallet from 24-word mnemonic phrase**
 
-**Lucid:**
+**JavaScript:**
 ```bash
 ./snippets/wallet/restore.js \
   --mnemonic "word1 word2 ... word24" \
@@ -69,7 +73,7 @@ All 30 snippets available in **cardano-common-snippets**, each with both Lucid a
 ### 3. Check Balance
 **Query wallet balance (ADA and all tokens)**
 
-**Lucid:**
+**JavaScript:**
 ```bash
 ./snippets/wallet/balance.js addr_test1qqxy... --network preprod --show-tokens
 ```
@@ -91,7 +95,7 @@ All 30 snippets available in **cardano-common-snippets**, each with both Lucid a
 ### 4. List UTxOs
 **List all unspent transaction outputs at an address**
 
-**Lucid:**
+**JavaScript:**
 ```bash
 ./snippets/wallet/utxos.js addr_test1qqxy... --network preprod --min-ada 5
 ```
@@ -113,7 +117,7 @@ All 30 snippets available in **cardano-common-snippets**, each with both Lucid a
 ### 5. Export Keys
 **Export wallet keys in different formats**
 
-**Lucid:**
+**JavaScript:**
 ```bash
 ./snippets/wallet/export.js \
   --wallet wallet.json \
@@ -140,7 +144,7 @@ All 30 snippets available in **cardano-common-snippets**, each with both Lucid a
 ### 6. Consolidate UTxOs
 **Merge multiple small UTxOs into one**
 
-**Lucid:**
+**JavaScript:**
 ```bash
 ./snippets/wallet/consolidate.js \
   --from wallet.json \
@@ -168,7 +172,7 @@ All 30 snippets available in **cardano-common-snippets**, each with both Lucid a
 ### 7. Send ADA
 **Send ADA to an address**
 
-**Lucid:**
+**JavaScript:**
 ```bash
 ./snippets/transactions/send-ada.js \
   --from wallet.json \
@@ -198,7 +202,7 @@ All 30 snippets available in **cardano-common-snippets**, each with both Lucid a
 ### 8. Send Tokens
 **Send native tokens or NFTs**
 
-**Lucid:**
+**JavaScript:**
 ```bash
 ./snippets/transactions/send-tokens.js \
   --from wallet.json \
@@ -230,7 +234,7 @@ All 30 snippets available in **cardano-common-snippets**, each with both Lucid a
 ### 9. Batch Payment
 **Send to multiple addresses in one transaction**
 
-**Lucid:**
+**JavaScript:**
 ```bash
 ./snippets/transactions/batch-payment.js \
   --from wallet.json \
@@ -267,7 +271,7 @@ All 30 snippets available in **cardano-common-snippets**, each with both Lucid a
 ### 10. Add Metadata
 **Send transaction with metadata attached**
 
-**Lucid:**
+**JavaScript:**
 ```bash
 ./snippets/transactions/with-metadata.js \
   --from wallet.json \
@@ -299,7 +303,7 @@ All 30 snippets available in **cardano-common-snippets**, each with both Lucid a
 ### 11. Estimate Fees
 **Calculate transaction fees before sending**
 
-**Lucid:**
+**JavaScript:**
 ```bash
 ./snippets/transactions/estimate-fee.js \
   --from wallet.json \
@@ -329,7 +333,7 @@ All 30 snippets available in **cardano-common-snippets**, each with both Lucid a
 ### 12. Monitor Transaction
 **Wait for transaction confirmation**
 
-**Lucid:**
+**JavaScript:**
 ```bash
 ./snippets/transactions/monitor.js \
   --tx-hash abc123... \
@@ -359,7 +363,7 @@ All 30 snippets available in **cardano-common-snippets**, each with both Lucid a
 ### 13. Mint NFT
 **Mint a single NFT with metadata**
 
-**Lucid:**
+**JavaScript:**
 ```bash
 ./snippets/nft/mint-nft.js \
   --name "My NFT" \
@@ -390,7 +394,7 @@ All 30 snippets available in **cardano-common-snippets**, each with both Lucid a
 ### 14. Mint Collection
 **Mint multiple NFTs in batches**
 
-**Lucid:**
+**JavaScript:**
 ```bash
 ./snippets/nft/mint-collection.js \
   --collection collection.json \
@@ -427,7 +431,7 @@ All 30 snippets available in **cardano-common-snippets**, each with both Lucid a
 ### 15. Mint Fungible Tokens
 **Mint native tokens (not NFTs)**
 
-**Lucid:**
+**JavaScript:**
 ```bash
 ./snippets/nft/mint-tokens.js \
   --name "MyToken" \
@@ -457,7 +461,7 @@ All 30 snippets available in **cardano-common-snippets**, each with both Lucid a
 ### 16. Burn Tokens
 **Remove tokens from circulation**
 
-**Lucid:**
+**JavaScript:**
 ```bash
 ./snippets/nft/burn.js \
   --policy abc123... \
@@ -489,7 +493,7 @@ All 30 snippets available in **cardano-common-snippets**, each with both Lucid a
 ### 17. Query Token Info
 **Get information about a token**
 
-**Lucid:**
+**JavaScript:**
 ```bash
 ./snippets/nft/token-info.js \
   --policy abc123... \
@@ -517,7 +521,7 @@ All 30 snippets available in **cardano-common-snippets**, each with both Lucid a
 ### 18. List Token Holders
 **Find all addresses holding a specific token**
 
-**Lucid:**
+**JavaScript:**
 ```bash
 ./snippets/nft/token-holders.js \
   --policy abc123... \
@@ -545,7 +549,7 @@ All 30 snippets available in **cardano-common-snippets**, each with both Lucid a
 ### 19. Lock Funds
 **Lock ADA at a validator address**
 
-**Lucid:**
+**JavaScript:**
 ```bash
 ./snippets/validator/lock-funds.js \
   --validator vesting.json \
@@ -577,7 +581,7 @@ All 30 snippets available in **cardano-common-snippets**, each with both Lucid a
 ### 20. Unlock Funds
 **Spend from a validator**
 
-**Lucid:**
+**JavaScript:**
 ```bash
 ./snippets/validator/unlock-funds.js \
   --validator vesting.json \
@@ -609,7 +613,7 @@ All 30 snippets available in **cardano-common-snippets**, each with both Lucid a
 ### 21. Query Script UTxOs
 **List all UTxOs at a script address**
 
-**Lucid:**
+**JavaScript:**
 ```bash
 ./snippets/validator/query-script.js \
   --validator vesting.json \
@@ -636,7 +640,7 @@ All 30 snippets available in **cardano-common-snippets**, each with both Lucid a
 ### 22. Deploy Validator
 **Deploy validator as reference script**
 
-**Lucid:**
+**JavaScript:**
 ```bash
 ./snippets/validator/deploy.js \
   --validator vesting.json \
@@ -664,7 +668,7 @@ All 30 snippets available in **cardano-common-snippets**, each with both Lucid a
 ### 23. Read Datum
 **Extract and decode datum from UTxO**
 
-**Lucid:**
+**JavaScript:**
 ```bash
 ./snippets/validator/read-datum.js \
   --utxo "abc123#0" \
@@ -692,7 +696,7 @@ All 30 snippets available in **cardano-common-snippets**, each with both Lucid a
 ### 24. Decode Transaction
 **Decode CBOR transaction to human-readable format**
 
-**Lucid:**
+**JavaScript:**
 ```bash
 ./snippets/debug/decode-tx.js \
   --tx-hash abc123... \
@@ -718,7 +722,7 @@ All 30 snippets available in **cardano-common-snippets**, each with both Lucid a
 ### 25. Analyze Failed Transaction
 **Diagnose why a transaction failed**
 
-**Lucid:**
+**JavaScript:**
 ```bash
 ./snippets/debug/analyze-failed.js \
   --tx-hash abc123... \
@@ -745,7 +749,7 @@ All 30 snippets available in **cardano-common-snippets**, each with both Lucid a
 ### 26. Calculate Min UTxO
 **Calculate minimum ADA required for a UTxO**
 
-**Lucid:**
+**JavaScript:**
 ```bash
 ./snippets/debug/min-utxo.js \
   --datum '{"value": "test"}' \
@@ -771,7 +775,7 @@ All 30 snippets available in **cardano-common-snippets**, each with both Lucid a
 ### 27. Check Script Size
 **Verify validator size is within limits**
 
-**Lucid:**
+**JavaScript:**
 ```bash
 ./snippets/debug/script-size.js --validator vesting.json
 ```
@@ -795,7 +799,7 @@ All 30 snippets available in **cardano-common-snippets**, each with both Lucid a
 ### 28. Create Reference Script
 **Store script on-chain for reuse**
 
-**Lucid:**
+**JavaScript:**
 ```bash
 ./snippets/advanced/create-reference.js \
   --validator vesting.json \
@@ -823,7 +827,7 @@ All 30 snippets available in **cardano-common-snippets**, each with both Lucid a
 ### 29. Delegate Stake
 **Delegate ADA to a stake pool**
 
-**Lucid:**
+**JavaScript:**
 ```bash
 ./snippets/advanced/delegate.js \
   --from wallet.json \
@@ -851,7 +855,7 @@ All 30 snippets available in **cardano-common-snippets**, each with both Lucid a
 ### 30. Withdraw Rewards
 **Claim accumulated staking rewards**
 
-**Lucid:**
+**JavaScript:**
 ```bash
 ./snippets/advanced/withdraw-rewards.js \
   --from wallet.json \

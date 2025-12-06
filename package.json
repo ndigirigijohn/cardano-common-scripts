@@ -1,0 +1,29 @@
+{
+  "name": "cardano-common-snippets",
+  "version": "1.0.0",
+  "description": "> Executable code snippets for common Cardano development tasks",
+  "main": "index.js",
+  "scripts": {
+    "wallet:generate": "node ./snippets/wallet/generate.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ndigirigijohn/cardano-common-snippets.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/ndigirigijohn/cardano-common-snippets/issues"
+  },
+  "homepage": "https://github.com/ndigirigijohn/cardano-common-snippets#readme",
+  "dependencies": {
+    "@emurgo/cardano-serialization-lib-nodejs": "^15.0.3",
+    "@lucid-evolution/lucid": "^0.4.29",
+    "@scure/bip39": "^2.0.1",
+    "commander": "^14.0.2",
+    "dotenv": "^17.2.3"
+  }
+}

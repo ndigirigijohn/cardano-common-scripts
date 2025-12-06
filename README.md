@@ -5,7 +5,7 @@
 Stop writing the same Cardano code over and over. Clone this repo, run a snippet, get results.
 
 Every snippet comes in **two flavors**:
-- 🟦 **Lucid Evolution** (JavaScript/TypeScript) - For applications and automation
+- 🟦 **Node.js (JavaScript/TypeScript)** - For applications and automation
 - 🟧 **cardano-cli** (Bash) - For scripts and maximum security
 
 ---
@@ -17,12 +17,13 @@ Every snippet comes in **two flavors**:
 git clone https://github.com/ndigirigijohn/cardano-common-snippets
 cd cardano-common-snippets
 
-# Install dependencies (for Lucid snippets)
+# Install dependencies (for JavaScript snippets)
 npm install
 
 # Set up environment
 cp .env.example .env
 # Edit .env and add your Blockfrost API keys
+# Optionally set DEFAULT_NETWORK to preview/mainnet
 
 # Run a snippet
 ./snippets/wallet/generate.sh --network preprod
@@ -60,11 +61,11 @@ See [SNIPPETS.md](SNIPPETS.md) for complete list with examples.
 Every snippet is a standalone executable:
 
 ```bash
-# Lucid version
-./snippets/wallet/generate.js --network preprod --output wallet.json
+# JavaScript version
+./snippets/wallet/generate.js --network preprod --output outputs/wallet/wallet.json
 
 # cardano-cli version
-./snippets/wallet/generate.sh --network preprod --output ./my-wallet
+./snippets/wallet/generate.sh --network preprod --output ./outputs/wallet
 ```
 
 ### **Option 2: npm Scripts**
@@ -97,19 +98,19 @@ cat snippets/wallet/generate.js
 
 ### Generate a Wallet
 
-**Lucid:**
+**JavaScript:**
 ```bash
-./snippets/wallet/generate.js --network preprod --output wallet.json
+./snippets/wallet/generate.js --network preprod --output outputs/wallet/wallet.json
 ```
 
 **cardano-cli:**
 ```bash
-./snippets/wallet/generate.sh --network preprod --output ./wallet-keys
+./snippets/wallet/generate.sh --network preprod --output ./outputs/wallet
 ```
 
 ### Check Balance
 
-**Lucid:**
+**JavaScript:**
 ```bash
 ./snippets/wallet/balance.js addr_test1qqxy... --network preprod
 ```
@@ -121,7 +122,7 @@ cat snippets/wallet/generate.js
 
 ### Send ADA
 
-**Lucid:**
+**JavaScript:**
 ```bash
 ./snippets/transactions/send-ada.js \
   --from wallet.json \
@@ -141,7 +142,7 @@ cat snippets/wallet/generate.js
 
 ### Mint an NFT
 
-**Lucid:**
+**JavaScript:**
 ```bash
 ./snippets/nft/mint-nft.js \
   --name "My First NFT" \
@@ -165,7 +166,7 @@ cat snippets/wallet/generate.js
 
 ### Prerequisites
 
-**For Lucid snippets:**
+**For JavaScript snippets:**
 - Node.js v18+ 
 - npm or yarn
 - Blockfrost API key ([get free key](https://blockfrost.io))
@@ -197,14 +198,17 @@ cp .env.example .env
 Edit `.env` and add your API keys:
 
 ```env
-# Blockfrost API Keys (for Lucid snippets)
+# Blockfrost API Keys (for JavaScript snippets)
 BLOCKFROST_API_KEY_PREPROD=preprodYourApiKeyHere
 BLOCKFROST_API_KEY_PREVIEW=previewYourApiKeyHere
 BLOCKFROST_API_KEY_MAINNET=mainnetYourApiKeyHere
 
-# Default network
+# Default network used when --network is omitted
 DEFAULT_NETWORK=preprod
 ```
+
+Update `DEFAULT_NETWORK` once and every snippet (Node.js or Bash) will default
+to that network unless you pass `--network` explicitly.
 
 ---
 
@@ -248,7 +252,11 @@ cardano-common-snippets/
 │   ├── complete-nft-flow.md
 │   └── dapp-deployment.md
 │
+├── outputs/                # Runtime artifacts (gitignored, see OUTPUT.md)
+│   └── .gitkeep
+│
 ├── .env.example
+├── OUTPUT.md
 ├── package.json
 ├── README.md
 ├── SNIPPETS.md            # Complete snippet reference
@@ -339,6 +347,7 @@ async function sendWithNotification(to, amount) {
 - **[SNIPPETS.md](SNIPPETS.md)** - Complete list of all snippets with usage examples
 - **[examples/](examples/)** - Complete workflow examples
 - **Inline Comments** - Every snippet is well-documented
+- **[OUTPUT.md](OUTPUT.md)** - Guidelines for the gitignored `outputs/` workspace
 
 ---
 
@@ -347,7 +356,7 @@ async function sendWithNotification(to, amount) {
 Have a useful snippet? Add it!
 
 1. Fork the repository
-2. Add your snippet (both Lucid and cardano-cli versions)
+2. Add your snippet (both JavaScript and cardano-cli versions)
 3. Test it on preprod
 4. Update SNIPPETS.md
 5. Submit a pull request
@@ -363,7 +372,7 @@ Have a useful snippet? Add it!
 
 ## ⚠️ Security Notes
 
-**For Lucid snippets:**
+**For JavaScript snippets:**
 - Never commit `.env` with real API keys
 - Never commit wallet files with real funds
 - Use environment variables for sensitive data
@@ -391,7 +400,7 @@ Free to use, modify, and distribute. No warranties provided.
 
 ## 🔗 Resources
 
-- [Lucid Evolution Docs](https://github.com/anastasia-labs/lucid-evolution)
+- [Cardano Serialization Lib](https://github.com/Emurgo/cardano-serialization-lib)
 - [cardano-cli Reference](https://developers.cardano.org/docs/get-started/cardano-cli)
 - [Blockfrost API](https://blockfrost.io)
 - [Cardano Testnet Faucet](https://docs.cardano.org/cardano-testnet/tools/faucet)

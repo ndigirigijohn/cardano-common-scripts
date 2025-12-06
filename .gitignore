@@ -1,1 +1,13 @@
 PLAN.md
+.env
+.env.local
+wallet.json
+wallet-keys/
+*.skey
+node_modules/
+outputs/
+!outputs/.gitkeep
+
+snippets
+package-lock.json
+package.json
