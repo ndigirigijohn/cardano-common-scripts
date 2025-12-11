@@ -7,3 +7,6 @@ wallet-keys/
 node_modules/
 outputs/
 !outputs/.gitkeep
+
+
+UI_THEME.md
