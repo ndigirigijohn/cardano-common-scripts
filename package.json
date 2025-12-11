@@ -1,5 +1,5 @@
 {
-  "name": "cardano-common-snippets",
+  "name": "cardano-common-scripts",
   "version": "1.0.0",
   "description": "> Executable code snippets for common Cardano development tasks",
   "main": "index.js",
@@ -9,16 +9,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ndigirigijohn/cardano-common-snippets.git"
+    "url": "git+https://github.com/ndigirigijohn/cardano-common-scripts.git"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "type": "module",
   "bugs": {
-    "url": "https://github.com/ndigirigijohn/cardano-common-snippets/issues"
+    "url": "https://github.com/ndigirigijohn/cardano-common-scripts/issues"
   },
-  "homepage": "https://github.com/ndigirigijohn/cardano-common-snippets#readme",
+  "homepage": "https://github.com/ndigirigijohn/cardano-common-scripts#readme",
   "dependencies": {
     "@emurgo/cardano-serialization-lib-nodejs": "^15.0.3",
     "@lucid-evolution/lucid": "^0.4.29",

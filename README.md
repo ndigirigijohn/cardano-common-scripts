@@ -1,4 +1,4 @@
-# Cardano Common Snippets
+# Cardano Common Scripts
 
 > Executable code snippets for common Cardano development tasks
 
@@ -14,8 +14,8 @@ Every snippet comes in **two flavors**:
 
 ```bash
 # Clone the repository
-git clone https://github.com/ndigirigijohn/cardano-common-snippets
-cd cardano-common-snippets
+git clone https://github.com/ndigirigijohn/cardano-common-scripts
+cd cardano-common-scripts
 
 # Install dependencies (for JavaScript snippets)
 npm install
@@ -179,8 +179,8 @@ cat snippets/wallet/generate.js
 
 ```bash
 # Clone repository
-git clone https://github.com/ndigirigijohn/cardano-common-snippets
-cd cardano-common-snippets
+git clone https://github.com/ndigirigijohn/cardano-common-scripts
+cd cardano-common-scripts
 
 # Install dependencies
 npm install
@@ -215,7 +215,7 @@ to that network unless you pass `--network` explicitly.
 ## 📂 Project Structure
 
 ```
-cardano-common-snippets/
+cardano-common-scripts/
 ├── snippets/
 │   ├── wallet/              # Wallet operations
 │   │   ├── generate.js
@@ -409,8 +409,8 @@ Free to use, modify, and distribute. No warranties provided.
 
 ## 💬 Support
 
-- **Issues:** [GitHub Issues](https://github.com/ndigirigijohn/cardano-common-snippets/issues)
-- **Discussions:** [GitHub Discussions](https://github.com/ndigirigijohn/cardano-common-snippets/discussions)
+- **Issues:** [GitHub Issues](https://github.com/ndigirigijohn/cardano-common-scripts/issues)
+- **Discussions:** [GitHub Discussions](https://github.com/ndigirigijohn/cardano-common-scripts/discussions)
 
 ---
 

@@ -1,6 +1,6 @@
 # Complete Snippets Reference
 
-All 30 snippets available in **cardano-common-snippets**, each with both Lucid and cardano-cli versions.
+All 30 snippets available in **cardano-common-scripts**, each with both Lucid and cardano-cli versions.
 
 ---
 

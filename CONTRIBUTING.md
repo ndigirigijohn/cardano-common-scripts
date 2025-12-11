@@ -1,6 +1,6 @@
 # Contributing Guide
 
-Thanks for helping grow `cardano-common-snippets`! This project aims to provide
+Thanks for helping grow `cardano-common-scripts`! This project aims to provide
 tested, copy/paste friendly snippets for common Cardano tasks. Keep
 contributions lean and practical.
 
