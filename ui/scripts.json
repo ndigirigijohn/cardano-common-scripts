@@ -1,0 +1,69 @@
+[
+  {
+    "id": "wallet-generate-cli",
+    "category": "Wallet",
+    "title": "Generate wallet (CLI)",
+    "description": "cardano-cli variant that writes payment/stake keys plus addr.",
+    "command": "./snippets/wallet/generate.sh --network preprod --output ./outputs/wallet",
+    "output": "> ./snippets/wallet/generate.sh --network preprod\n✔ payment.skey saved\n✔ stake.skey saved\n✔ wallet.json written",
+    "tags": ["wallet", "keys", "cli", "generate"],
+    "docs": "https://github.com/ndigirigijohn/cardano-common-scripts/blob/main/SNIPPETS.md#wallet-operations",
+    "scriptPath": "snippets/wallet/generate.sh"
+  },
+  {
+    "id": "wallet-generate-js",
+    "category": "Wallet",
+    "title": "Generate wallet (npm)",
+    "description": "Lucid/Node script that emits mnemonic, address, and JSON bundle.",
+    "command": "npm run wallet:generate -- --network preprod --json",
+    "output": "> npm run wallet:generate -- --network preprod --json\n✔ mnemonic: volcano draw ...\n✔ keys exported to outputs/wallet/wallet.json",
+    "tags": ["wallet", "lucid", "generate"],
+    "docs": "https://github.com/ndigirigijohn/cardano-common-scripts/blob/main/SNIPPETS.md#wallet-operations",
+    "scriptPath": "scripts/wallet/generate.js"
+  },
+  {
+    "id": "tx-send",
+    "category": "Transactions",
+    "title": "Send ADA with metadata",
+    "description": "Prebuilt helper for transferring ADA plus optional metadata.",
+    "command": "npm run tx:send -- --from wallet.json --to addr_test1... --amount 15 --metadata files/metadata.json",
+    "output": "> tx submitted: 4f1c...ac3d\nwaiting for confirmation...\n✔ included in block #123456",
+    "tags": ["transaction", "ada", "metadata"],
+    "docs": "https://github.com/ndigirigijohn/cardano-common-scripts/blob/main/SNIPPETS.md#transactions",
+    "scriptPath": "snippets/transactions/send-ada.js"
+  },
+  {
+    "id": "nft-mint",
+    "category": "NFTs & Tokens",
+    "title": "Mint single NFT (JS)",
+    "description": "One-off mint that references IPFS media and policy script.",
+    "command": "./snippets/nft/mint-nft.js --name CommonScript --image ipfs://Qm... --from wallet.json --network preprod",
+    "output": "✔ policy id: 7d4b6f...\n✔ asset id: 7d4b6f....436f6d6d6f6e\nToken minted and stored in outputs/nft/",
+    "tags": ["nft", "mint", "ipfs"],
+    "docs": "https://github.com/ndigirigijohn/cardano-common-scripts/blob/main/SNIPPETS.md#nfts--tokens",
+    "scriptPath": "snippets/nft/mint-nft.js"
+  },
+  {
+    "id": "validator-lock",
+    "category": "Smart Contracts",
+    "title": "Lock funds in validator",
+    "description": "Ships ADA to a reference script with inline datum.",
+    "command": "./snippets/validator/lock-funds.js --validator vesting.json --datum vesting.datum.json --amount 25 --network preprod",
+    "output": "> validator lock\n✔ datum hash: 3eab...af9c\n✔ tx hash: 91de...12ff",
+    "tags": ["validator", "datum", "lock"],
+    "docs": "https://github.com/ndigirigijohn/cardano-common-scripts/blob/main/SNIPPETS.md#smart-contracts",
+    "scriptPath": "snippets/validator/lock-funds.js"
+  },
+  {
+    "id": "debug-decode",
+    "category": "Debugging",
+    "title": "Decode transaction JSON",
+    "description": "Decodes a tx cbor/json file into readable fields.",
+    "command": "./snippets/debug/decode-tx.js --file tx.signed",
+    "output": "> ./snippets/debug/decode-tx.js --file tx.signed\ninputs:\n  - 7d4b6f...#0 (10000000 lovelace)\noutputs:\n  - addr_test1... (9000000 lovelace)",
+    "tags": ["debug", "decode", "transactions"],
+    "docs": "https://github.com/ndigirigijohn/cardano-common-scripts/blob/main/SNIPPETS.md#debugging",
+    "scriptPath": "snippets/debug/decode-tx.js"
+  }
+]
+
